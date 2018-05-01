@@ -1,12 +1,17 @@
-module.exports = function(n) {
+module.exports = n => {
   return n * n;
 }
 
-var Maze =[7];
-function CreateBoard(n) {
+ CreateBoard = (n) => {
 
-    Maze = (new Array(n)).fill((new Array(n)).fill(0));
+    Maze = (new Array(2 * n +1)).fill(new Array(n).fill(1));
+    Maze = Maze.map(function(el, index) {
+      if(index % 2 === 1) {
+        return new Array(n + 1).fill(1)
+      }
+      else return el
+    })
     console.log(Maze);
 
 }
-CreateBoard(7)
+CreateBoard(4)
