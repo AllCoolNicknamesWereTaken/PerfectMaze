@@ -4,14 +4,35 @@ module.exports = n => {
 
  CreateBoard = (n) => {
 
-    Maze = (new Array(2 * n +1)).fill(new Array(n).fill(1));
-    Maze = Maze.map(function(el, index) {
-      if(index % 2 === 1) {
-        return new Array(n + 1).fill(1)
-      }
-      else return el
-    })
-    console.log(Maze);
+    Maze = (new Array(2 * n + 1)).fill(new Array(2 * n + 1).fill(1));
 
+    Maze = Maze.map((el, index) => {
+      var Nmaze = new Array();
+      if(index % 2 === 0) {
+        Nmaze = el.map((e, i) => {
+          if(i % 2 === 0) {
+            return 0;
+          }
+          else {
+            return e;
+          }
+        })
+      }
+
+      else {
+        Nmaze = el.map((e, i) => {
+          if(i % 2 != 0) {
+            return 0;
+          }
+          else {
+            return e;
+          }
+        })
+      }
+      return Nmaze;
+    })
+
+    console.log(Maze);
 }
+
 CreateBoard(4)
