@@ -35,4 +35,4 @@ module.exports = n => {
     console.log(Maze);
 }
 
-CreateBoard(4)
+CreateBoard(5)
